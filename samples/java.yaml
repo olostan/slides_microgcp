@@ -1,0 +1,14 @@
+application: myapp
+version: alpha-001
+runtime: java
+threadsafe: true
+
+handlers:
+  - url: /red/*
+    servlet: mysite.server.TeamServlet
+    init_params:
+      teamColor: red
+      bgColor: "#CC0000"
+    name: redteam
+  - url: /register/*
+    jsp: /register/start.jsp
