@@ -61,6 +61,36 @@
         <symbol id="last_kudos">Kudos to Dan North @tastapod, Dejan Glozic @dglozic,Martin Fowler @martinfowler and other great people who
         contribute in understanding and implementing micro-services. Special thanks to Google for their great products.</symbol>
 
+        <comment slide="1">Micro-services in Google Cloud Platform</comment>
+        <comment slide="2">My name is Valentyn Shybanov. You can find more information on <a href="http://olostan.name/">http://olostan.name/</a></comment>
+        <comment slide="3">There are three simple principles of micro-services. First one - isolated logical-bound components.</comment>
+        <comment slide="4">Second - asynchronous messaging between services. But no single "enterprise service bus", let
+            service decide the best way to communicate. HTTP/1, HTTP/2, REST, WCF...</comment>
+        <comment slide="5">And last one - each service should store its own data. No single Database - that means no DB bottleneck,
+        no single decision about relational vs not-relational databases,</comment>
+        <comment slide="6">But what is "micro"? Does that mean that each service should be 100 lines of code? 1000? How to
+        understand is service "micro" or not?</comment>
+        <comment slide="7">I like how Dan North defined this. As long as you can fully understand bounds of service, understand
+        all dependencies, that mean that it is good candidate for micro-service.</comment>
+        <comment slide="8">So let's take a look what Google Cloud Platform can suggest: First and the most easiest is Google App Engine</comment>
+        <comment slide="9">With GAE you can focus on code. Everything else is handled by Google. You write code, Google do
+        building, deployment, health monitoring, load balancing - everything except writing code of your app!</comment>
+        <comment slide="10">If you have, for example, Java app, all you need is to add single file that describes endpoints</comment>
+        <comment slide="11">There are couple of restrictions: like set of languages, that could be used, not full SDK, access to system etc</comment>
+        <comment slide="12">But if it not enough, you can use Managed VM: In this case you can use other languages (like Dart), full
+        access to system resources etc.</comment>
+        <comment slide="13">Still Google take care about lots of things like hearth checking</comment>
+        <comment slide="14">OS is updated automatically giving reliable safe system</comment>
+        <comment slide="15">But even if you are unsatisfied with Managed VM, you can use Google Compute Engine for
+            running VMs. It is IaaS provided by Google.</comment>
+        <comment slide="16">Even in this case Google can suggest you to use Kubernetes: easy way to automate management of Linux containers</comment>
+        <comment slide="17">For example, with simple configuration file you can spawn MongoDB in cluster in reliable way</comment>
+        <comment slide="18">Or you own application in scaled (replicas:2) way. Kubernetes will make sure that there will be
+        at least 2 instances running.</comment>
+        <comment slide="19">And for communication between services you can use GRPC - minimal overhead and bi-directional communication.</comment>
+        <comment slide="20">Internally gRPC use Protobuf, so messages and services are specified in a very clean way</comment>
+        <comment slide="24">Please feel free to contact me!</comment>
+
     </presentation>
 
 
